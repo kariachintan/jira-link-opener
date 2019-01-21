@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "name": "Jira User Story Locator",
+  "description": "Open Jira User Story by #id",
+  "version": "0.2.2",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click to Open Jira User Story"
+  },
+
+  "permissions": [
+          "tabs","storage"
+        ],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "icons": { 
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+J"
+      },
+      "description": "Open Jira Story"
+    }
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
